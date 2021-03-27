@@ -83,7 +83,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 // gui.add(pointLight.position, 'x').min(-10).max(10);
 // gui.add(pointLight.position, 'y').min(-10).max(30);
 // gui.add(pointLight.position, 'z').min(-10).max(30);
-// maybe doesnt play well with GUI?
+// maybe doesn't play well with GUI?
 // const col = new THREE.Color( 0xff0000 );
 // const col = { color: 0xff69 };
 // gui.addColor(col, 'color').onChange(() => {
