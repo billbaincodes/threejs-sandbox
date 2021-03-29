@@ -10,6 +10,8 @@ const loader = new THREE.TextureLoader();
 const texture = loader.load('./assets/mtntexture.jpeg');
 const height = loader.load('./assets/height.png');
 const alpha = loader.load('./assets/alpha3.png');
+const dragon = loader.load('../assets/dragonMap.jpeg');
+const range = loader.load('../assets/rangeMap.jpeg');
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -24,8 +26,9 @@ const planeGeo = new THREE.PlaneBufferGeometry(3, 3, 64, 64);
 const planeMat = new THREE.MeshStandardMaterial({
   color: 'gray',
   map: texture,
-  displacementMap: height,
-  displacementScale: .8,
+  displacementMap: range,
+  displacementScale: 1,
+  wireframe: true,
   alphaMap: alpha,
   transparent: true,
   depthTest: false,
@@ -76,6 +79,17 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+// Mouse Listener
+let mouseY = 0
+let animatePlane = (e) => {
+  mouseY = e.clientY;
+}
+
+document.addEventListener('mousemove', animatePlane);
+
+
+
+
 // Debug
 // const gui = new dat.GUI();
 // gui.add(plane.rotation, 'x').min(-3.0).max(3.0);
@@ -97,6 +111,9 @@ const tick = () => {
 
   // Update objects
   plane.rotation.z = 0.2 * elapsedTime;
+
+  // Mouse movement
+  plane.material.displacementScale = mouseY * 0.0009
 
   // Update Orbital Controls
   // controls.update()
