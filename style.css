@@ -1,36 +1,16 @@
 * {
   margin: 0;
+  padding: 0;
 }
 
-html {
-  background-color: rgb(0, 24, 0);
-  font-family:Arial, Helvetica, sans-serif;
-}
-
-div {
+.back {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  margin: 8rem 8rem;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
   color: white;
 }
 
-h1 {
-  font-size: 4rem;
-  color: white;
-}
-
-canvas {
-  margin-left: 23rem;
-  margin-top: 3rem;
-}
-
-button {
-  margin-top: 1rem;
-  outline: none;
-  border: none;
-  background-color: greenyellow;
-  text-transform: uppercase;
-  padding: .4rem;
+body {
+  /* background-color: hotpink; */
 }

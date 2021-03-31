@@ -1,17 +1,17 @@
 console.log("become one with inner selfness");
 
 // import './style.css'
-import * as THREE from "../node_modules/three/build/three.module.js";
-import { OrbitControls } from "../node_modules/three/examples/jsm/controls/OrbitControls.js"
-import * as dat from "../node_modules/dat.gui/build/dat.gui.module.js";
+import * as THREE from "/node_modules/three/build/three.module.js";
+import { OrbitControls } from "/node_modules/three/examples/jsm/controls/OrbitControls.js"
+import * as dat from "/node_modules/dat.gui/build/dat.gui.module.js";
 
 // Textures
 const loader = new THREE.TextureLoader();
-const texture = loader.load('./assets/mtntexture.jpeg');
-const height = loader.load('./assets/height.png');
-const alpha = loader.load('./assets/alpha3.png');
-const dragon = loader.load('../assets/dragonMap.jpeg');
-const range = loader.load('../assets/rangeMap.jpeg');
+const texture = loader.load('/assets/mtntexture.jpeg');
+const height = loader.load('/assets/height.png');
+const alpha = loader.load('/assets/alpha3.png');
+const dragon = loader.load('/assets/dragonMap.jpeg');
+const range = loader.load('/assets/rangeMap.jpeg');
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -63,13 +63,13 @@ const camera = new THREE.PerspectiveCamera(
   100
 );
 camera.position.x = 0;
-camera.position.y = .6;
-camera.position.z = 1.5;
+camera.position.y = 0;
+camera.position.z = 2;
 scene.add(camera);
 
 // Controls
-const controls = new OrbitControls(camera, canvas)
-controls.enableDamping = true
+// const controls = new OrbitControls(camera, canvas)
+// controls.enableDamping = true
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
@@ -91,12 +91,12 @@ document.addEventListener('mousemove', animatePlane);
 
 
 // Debug
-// const gui = new dat.GUI();
+const gui = new dat.GUI();
 // gui.add(plane.rotation, 'x').min(-3.0).max(3.0);
 // gui.add(plane.displacementScale).min(-3.0).max(3.0);
-// gui.add(pointLight.position, 'x').min(-10).max(10);
-// gui.add(pointLight.position, 'y').min(-10).max(30);
-// gui.add(pointLight.position, 'z').min(-10).max(30);
+gui.add(camera.position, 'x').min(-10).max(10);
+gui.add(camera.position, 'y').min(-10).max(30);
+gui.add(camera.position, 'z').min(-10).max(30);
 // maybe doesn't play well with GUI?
 // const col = new THREE.Color( 0xff0000 );
 // const col = { color: 0xff69 };
