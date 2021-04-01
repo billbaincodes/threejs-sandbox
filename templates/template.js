@@ -1,7 +1,7 @@
 // import './style.css'
-import * as THREE from "../node_modules/three/build/three.module.js";
+import * as THREE from "three/build/three.module";
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from "../node_modules/dat.gui/build/dat.gui.module.js";
+import * as dat from "dat.gui/build/dat.gui.module";
 
 // Debug
 const gui = new dat.GUI();
