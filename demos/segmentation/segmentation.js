@@ -1,6 +1,6 @@
-import * as THREE from "/node_modules/three/build/three.module";
-import { OrbitControls } from '/node_modules/three/examples/jsm/controls/OrbitControls'
-import * as dat from "/node_modules/dat.gui/build/dat.gui.module";
+import * as THREE from "/node_modules/three/build/three.module.js";
+import { OrbitControls } from '/node_modules/three/examples/jsm/controls/OrbitControls.js'
+import * as dat from "/node_modules/dat.gui/build/dat.gui.module.js";
 
 // Debug
 const gui = new dat.GUI();
@@ -13,8 +13,8 @@ const scene = new THREE.Scene();
 
 // Textures
 const loader = new THREE.TextureLoader();
-const texture = loader.load('./assets/tree.jpg');
-const treeHeight = loader.load('../assets/treeDisplacement.jpg');
+const texture = loader.load('/assets/tree.jpg');
+const treeHeight = loader.load('/assets/treeDisplacement.jpg');
 
 // Objects
 const planeGeo = new THREE.PlaneBufferGeometry(3, 3, 100, 100);
@@ -25,7 +25,7 @@ const planeGeo = new THREE.PlaneBufferGeometry(3, 3, 100, 100);
 const planeMat = new THREE.MeshStandardMaterial({
   map: texture,
   wireframe: true,
-  displacementMap: treeHeight,
+  // displacementMap: treeHeight,
   displacementScale: .2,
   // transparent: true,
   // depthTest: false,
